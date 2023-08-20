@@ -1,0 +1,29 @@
+*{
+    font-family: 'Playfair Display', serif;
+    background-color: #002E94;
+    color: white;
+}
+main{
+    text-align: center;
+    padding: 100px 0;
+    font-size: 100px;
+}
+p{
+    margin: 0px;
+}
+a{
+    padding-top: 20px;
+    font-size: 25px;
+}
+header{
+    padding-left: 400px;
+    padding-top: 50px;
+    font-size: 30px;
+}
+nav{
+    font-family: 'Mukta', sans-serif;
+    text-align: end;
+    padding-right: 400px;
+    font-size: 25px;
+}
+
