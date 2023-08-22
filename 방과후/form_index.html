@@ -1,0 +1,47 @@
+<!-- sign up page -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up page</title>
+</head>
+
+<body>
+    <h3>SIGN UP PAGE</h3>
+
+    <form action="join.html">
+        <div>
+            <span>아이디</span>
+            <input type="text" name="id">
+        </div>
+
+        <div>
+            <span>비밀번호</span>
+            <input type="password" name="pw">
+        </div>
+
+        <form>
+            <span>남자</span> <input type="radio" name="gender" value="Man">
+            <span>여자</span> <input type="radio" name="gender" value="Woman">
+            <span>선택 안함</span> <input type="radio" name="gender" value="No">
+        </form>
+
+        <span>학년</span>
+        <select name="grade">
+            <option value="1학년"> 1학년
+            <option value="2학년"> 2학년
+            <option value="3학년"> 3학년
+        </select>
+
+        <span>반</span>
+        <select name="class">
+            <option value="11반"> 11반
+            <option value="12반"> 12반
+        </select>
+
+        <div><input type="submit" value="회원가입"></div>
+    </form>
+</body>
+
+</html>
