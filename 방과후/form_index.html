@@ -10,7 +10,8 @@
 <body>
     <h3>SIGN UP PAGE</h3>
 
-    <form action="join.html">
+    <form action="join.html" method = "get">
+    <!-- post - 주소줄에 name 속성 안 뜸, get - 기본값, name 속성 뜸 -->
         <div>
             <span>아이디</span>
             <input type="text" name="id">
@@ -41,6 +42,9 @@
             <option value="11반"> 11반
             <option value="12반"> 12반
         </select>
+
+        <div>생일 <input type="date" name="birth"></div>
+        <div>색깔 <input type="color" name="color"></div>
 
         <div><input type="submit" value="회원가입"></div>
     </form>
