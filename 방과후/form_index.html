@@ -43,8 +43,17 @@
             <option value="12반"> 12반
         </select>
 
-        <div>생일 <input type="date" name="birth"></div>
-        <div>색깔 <input type="color" name="color"></div>
+       <!-- readonly == 읽기전용 / placeholder == "아이디를 입력하세요" 회색으로 표시 -->
+        <fieldset>
+            <legend>회원가입</legend>
+            <div>아이디 <input type="text" name="id"></div>
+            <div>생일 <input type="date" name="birth"></div>
+            <div>색깔 <input type="color" name="color" value="#ffffff"></div>
+            </legend>
+        </fieldset>
+        <div><input type="submit" value="전송">
+            <input type="reset" value="초기화">
+        </div>
 
         <div><input type="submit" value="회원가입"></div>
     </form>
