@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>time-table</title>
+    <title>Document</title>
 </head>
 
 <body>
     <table border="5">
-        <th style="height: 10px; width: 445px; background-color: #FFE6BE;">제 1학년 12반 시간표</th>
+        <th style="height: 10px; width: 445px; background-color: lightgoldenrodyellow;">제 1학년 12반 시간표</th>
     </table>
 
     <table border="3" style="text-align: center;">
-       <tr style="width: 70px; background-color: lightyellow;">
+        <tr style="width: 70px; background-color: lightyellow;">
             <th>교시</th>
             <th style="width: 70px;">월</td>
             <th style="width: 70px;">화</td>
@@ -23,25 +23,26 @@
         </tr>
 
         <tr>
-            <th style="width: 70px; background-color: #FFB7B7;">1교시</td>
+            <th style="width: 70px; background-color: lightyellow;">1교시</td>
             <td>영어</td>
-            <td>데베프</td>
-            <td>정보</td>
-            <td>응프화</td>
+            <!-- rowspan : 가로 속성들을 세로로 통합 -->
+            <td rowspan="2">데베프</td>
+            <td rowspan="2">정보</td>
+            <td rowspan="2">응프화</td>
             <td>수학</td>
         </tr>
 
         <tr>
-            <th style="width: 70px; background-color: #FFB7B7;">2교시</td>
+            <th style="width: 70px; background-color: lightyellow;">2교시</td>
             <td>수학</td>
-            <td>데베프</td>
-            <td>정보</td>
-            <td>응프화</td>
+            <!-- <td>데베프</td> -->
+            <!-- <td>정보</td> -->
+            <!-- <td>응프화</td> -->
             <td>일본</td>
         </tr>
 
         <tr>
-            <th style="width: 70px; background-color: #FFB7B7;">3교시</td>
+            <th style="width: 70px; background-color: lightyellow;">3교시</td>
             <td>국어</td>
             <td>영어</td>
             <td>일본</td>
@@ -50,7 +51,7 @@
         </tr>
 
         <tr>
-            <th style="width: 70px; background-color: #FFB7B7;">4교시</td>
+            <th style="width: 70px; background-color: lightyellow;">4교시</td>
             <td>체육</td>
             <td>수학</td>
             <td>국어</td>
@@ -59,30 +60,31 @@
         </tr>
 
         <tr>
-            <th style="width: 70px; background-color: #FFB7B7;">5교시</td>
+            <th style="width: 70px; background-color: lightyellow;">5교시</td>
             <td>통과</td>
             <td>체육</td>
             <td>수학</td>
             <td>정보</td>
-            <td>창체</td>
+            <td rowspan="3">창체</td>
         </tr>
 
         <tr>
-            <th style="width: 70px; background-color: #FFB7B7;">6교시</td>
+            <th style="width: 70px; background-color: lightyellow;">6교시</td>
             <td>데베프</td>
             <td></td>
             <td>통과</td>
             <td>통과</td>
-            <td>창체</td>
+            <!-- <td>창체</td> -->
         </tr>
 
         <tr>
-            <th style="width: 70px; background-color: #FFB7B7;">7교시</td>
+            <th style="width: 70px; background-color: lightyellow;">7교시</td>
             <td>응프화</td>
-            <td></td>
-            <td></td>
+            <!-- colspan : 세로의 속성들을 가로로 통합 -->
+            <td colspan="2"></td>
+            <!-- <td></td> -->
             <td>국어</td>
-            <td>창체</td>
+            <!-- <td>창체</td> -->
         </tr>
     </table>
 </body>
