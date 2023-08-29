@@ -1,0 +1,16 @@
+/* html 파일에서 css 파일 불러오기 -> <link rel="stylesheet" href="style.css">  */
+p {
+    font-family: 'Georgia';
+}
+
+/* html - class="클래스명" == css - .클래스명 */
+/* html 클래스 자동완성 .클래스명+엔터 (클래스명 생략 시 div 클래스 생성) */
+.home {
+    color: brown;
+}
+
+/* 클래스와 아이디 동시 사용 시 클래스 -> 아이디 순으로 */
+/* 아이디는 고유해야함(하나만) */
+#hello {
+    color: gray;
+}
