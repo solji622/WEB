@@ -1,0 +1,19 @@
+* {
+    font-family: '굴림';
+    background-color: lightgoldenrodyellow;
+}
+
+img {
+    width: 300px;
+}
+
+p {
+    width: 100%;
+}
+
+/* div 속의 h2 */
+/* div>p>h2 태그 적용 안 되게 하려면 class 사용 */
+div>h2 {
+    background-color: coral;
+}
+
