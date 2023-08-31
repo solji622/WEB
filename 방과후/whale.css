@@ -1,0 +1,41 @@
+* {
+    font-family: '굴림';
+    background-color: lightblue;
+}
+
+.kind {
+    color: darkblue;
+}
+
+/* [속성] 또는 [속성=값] */
+[class] {
+    color: mediumblue;
+}
+
+/* 그룹 선택자 -> 속성 간에 "," 끼우기 */
+/* 자식 선택자 -> 부모 > 자식 */
+
+a {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+}
+
+
+/* 가상 클래스 */
+/* link : 링크 클릭 전 / visited : 링크 클릭 후 */
+/* a:link {
+    color: darkslateblue;
+}
+
+a:visited {
+    color: royalblue;
+} */
+
+
+/* hover -> 마우스 갖다댔을 때 */
+a:hover {
+    background-color: moccasin;
+    /* a를 block으로 설정했기에 너비 조정 가능 */
+    width: 90px;
+}
