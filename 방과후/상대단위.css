@@ -1,0 +1,28 @@
+.px {
+    font-size: 16px;
+    color: rgb(192, 111, 78);
+}
+
+.per {
+    font-size: 70%;
+    /* rgba == 투명도 조절 */
+    color: rgba(192, 111, 78, 0.5);
+}
+
+/* 소수점 - 축소, 정수 - 확대 */
+.em {
+    font-size: 0.5em;
+    color: #333333;
+}
+
+.rem {
+    font-size: 1em;
+}
+
+.vw {
+    font-size: 1vw;
+}
+
+.vh {
+    font-size: 1vh;
+}
