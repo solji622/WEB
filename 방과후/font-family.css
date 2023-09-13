@@ -1,0 +1,36 @@
+* {
+    font-family: "굴림";
+    font-weight: bold;
+}
+
+.fontFamily {
+    font-family: "Georgia", "굴림";
+    background-color: bisque;
+    color: sienna;
+    font-weight: bold;
+    text-align: center;
+}
+
+.fontFamily span {
+    color: darkorange;
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+.textalignLeft {
+    text-align: left;
+    height: 100px;
+    line-height: 100px;
+}
+
+.textalignCenter {
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+}
+
+.textalignRight {
+    text-align: right;
+    height: 100px;
+    line-height: 100px;
+}
