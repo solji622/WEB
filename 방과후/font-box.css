@@ -21,16 +21,31 @@
     text-align: left;
     height: 100px;
     line-height: 100px;
+    background-color: #33333366;
+    margin: 10px;
+    padding: 10px;
 }
 
 .textalignCenter {
     text-align: center;
     height: 100px;
     line-height: 100px;
+    background-color: #33333344;
+    margin: 10px;
+    padding: 10px;
 }
 
 .textalignRight {
     text-align: right;
     height: 100px;
     line-height: 100px;
+    background-color: #33333322;
+    margin: 10px;
+    padding: 10px;
+
+    /* border-style: dotted;
+    border-width: 2px;
+    border-color: goldenrod; */
+
+    border: 2px dotted black;
 }
