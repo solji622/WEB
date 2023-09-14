@@ -1,0 +1,68 @@
+* {
+    font-family: '굴림';
+    font-weight: bold;
+}
+
+div {
+    width: 100px;
+    height: 100px;
+}
+
+span {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #3CB37122;
+    /* display: block; 인라인을 블락으로 */
+}
+
+.box1 {
+    position: relative;
+    width: 600px;
+    height: 200px;
+    margin: 10px;
+    background-color: aliceblue;
+    border: 2px solid black;
+}
+
+.box1 div {
+    border: 2px solid black;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+}
+
+.a {
+    position: static;
+    /* 고정, 때문에 방향값 넣어도 변동 x */
+    background-color: #3CB37133;
+    border: 1px solid black;
+}
+
+.b {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    background-color: #3CB37155;
+    border: 1px solid black;
+}
+
+.c {
+    position: relative;
+    /* 상대적인 */
+    left: 100px;
+    background-color: #3CB37188;
+    border: 1px solid black;
+}
+
+li {
+    list-style: none;
+    /* 목차 요소 가로로 정렬 */
+    float: left;
+    margin: 0 5px;
+}
+
+.c:hover {
+    background-color: cadetblue;
+}
