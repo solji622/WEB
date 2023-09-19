@@ -1,0 +1,57 @@
+/* position */
+.position div {
+    width: 100px;
+    height: 100px;
+}
+
+.position {
+    position: relative;
+    height: 100px;
+}
+
+.position .a {
+    position: absolute;
+    left: 0px;
+}
+
+.position .b {
+    position: absolute;
+    left: 100px;
+}
+
+.position .c {
+    position: absolute;
+    left: 200px;
+}
+
+/* float */
+.float div {
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
+.float {
+    height: 100px;
+}
+
+/* display */
+.display div {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+
+
+/* color */
+.a {
+    background-color: #3CB37199;
+}
+
+.b {
+    background-color: #3CB37177;
+}
+
+.c {
+    background-color: #3CB37155;
+}
