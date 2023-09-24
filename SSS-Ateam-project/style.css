@@ -1,0 +1,57 @@
+*{
+    font-family: 'HY견고딕';
+}
+
+.a{
+    background-color: #EDCDBB;
+    display: inline-block;
+}
+
+.b{
+    background-color: #CEAB93;
+    display: inline-block;
+}
+
+.c{
+    background-color: #AD8B73;
+    display: inline-block;
+}
+
+.d{
+    background-color: #7D5A50;
+    display: inline-block;
+}
+
+.e{
+    background-color: #CDE990;
+    display: inline-block;
+}
+
+.f{
+    background-color: #CED89E;
+    display: inline-block;
+}
+
+.g{
+    background-color: #A3DE83;
+    display: inline-block;
+}
+
+.h{
+    background-color: #96BB7C;
+    display: inline-block;
+}
+
+/* EX -> BROWN */
+.brownback{
+    background-color: #EDCDBB;
+}
+.brownnav{
+    background-color:#CEAB93;
+}
+.brownfont{
+    color: #AD8B73;
+}
+.brownfont-highlight{
+    color:#7D5A50;
+}
