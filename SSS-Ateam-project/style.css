@@ -1,57 +1,68 @@
+@font-face {
+    font-family: 'Giants-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Giants-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
 *{
-    font-family: 'HY견고딕';
+    font-family: 'Giants-Bold';
 }
 
 .a{
-    background-color: #EDCDBB;
+    background-color: #C8B6A6;
     display: inline-block;
 }
 
-/* .b{
-    background-color: #CEAB93;
-    display: inline-block;
-} */
 
 .c{
-    background-color: #AD8B73;
-    display: inline-block;
-}
-
-.d{
     background-color: #7D5A50;
     display: inline-block;
 }
 
-.e{
-    background-color: #CDE990;
+.d{
+    background-color: #553939;
     display: inline-block;
 }
 
-/* .f{
-    background-color: #CED89E;
+.e{
+    background-color: #A0C49D;
     display: inline-block;
-} */
+}
+
 
 .g{
-    background-color: #A3DE83;
+    background-color: #446A46;
     display: inline-block;
 }
 
 .h{
-    background-color: #96BB7C;
+    background-color: #243D25;
     display: inline-block;
 }
 
-/* EX -> BROWN */
-.brownback{
-    background-color: #EDCDBB;
+
+.exbrown{
+    background-color: #C8B6A6;
+    text-align: center;
+    width: 500px;
 }
-.brownnav{
-    background-color:#CEAB93;
+.exp>p{
+    color: #7D5A50;
 }
-.brownfont{
-    color: #AD8B73;
+.exp>span{
+    color: #553939;
 }
-.brownfont-highlight{
-    color:#7D5A50;
+
+
+.exgreen{
+    background-color: #A0C49D;
+    text-align: center;
+    width: 500px;
+}
+.exp1>p{
+    color:#446A46;
+}
+.exp1>span{
+    color: #243D25;
 }
