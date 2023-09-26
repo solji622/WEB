@@ -33,5 +33,35 @@
 }
 
 @-webkit-keyframes appear {
+
     /* 애니메이션 키프레임 정의 */
+    to {
+        transform: scale3d(1, 1, 1);
+        /* scale3d -> 해당 요소의 크기를 주어진 배율만큼 x,y,z 방향으로 늘리거나 줄임 */
+        opacity: 1;
+        /* opacity -> 요소 투명도 설정 */
+    }
 }
+
+@keyframes appear {
+    to {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+body {
+    background: #00000a;
+    display: flex;
+    flex-direction: column;
+    /* 요소 세로 정렬 */
+    gap: 3em;
+    /* gap -> 행과 열 사이의 간격 설정 */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Inter';
+    font-size: var(--size);
+}
+
+/* ----여기까지가 기본 세팅---- */
