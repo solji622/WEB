@@ -65,3 +65,189 @@ body {
 }
 
 /* ----여기까지가 기본 세팅---- */
+
+/* 폰 메인 */
+.phone{
+    position: relative;
+    z-index: 1;
+    aspect-ratio: 37/76;
+    background: black;
+    height: var(--heght);
+    border-radius: var(--border-radius);
+    /* border-radius -> 요소의 크기를 일관되게 조정하는 속성(비율 조정 시 유지) width/height */
+    box-shadow: 0 0 0.1em 0.25em hsl(var(--c-h), 20%, 25%), 0 0 0 var(--border-width) hsl(var(--c-h), 30%, 85%);
+    /* hsl -> 색 hue, 채도 saturation, 명도 lightness */
+    box-sizing: border-box;
+    opacity: 0;
+    transform: scale3d(1.1, 1.1, 1);
+    -webkit-animation: appear 1s var(--ease-out) forwards;
+    animation: appear 1s var(--ease-out) forwards;
+    --webkit-backface-visibility: hidden;
+    /* backface-visibility -> 요소의 뒷쪽에서 앞면이 보이게 할지 정하는 속성 */
+}
+
+.phone::before{
+    content: "";
+    position: absolute;
+    top: var(--border-radius);
+    right: calc(var(--border-width) * -1);
+    bottom: calc(var(--border-radius));
+    left: calc(var(--border-width) * -1);
+    border: 0.5em solid hsl(var(--c-h), 20%, 30%);
+    border-left-width: 0;
+    border-right-width: 0;
+}
+
+
+/* 버튼 */
+.buttons{
+    position: absolute;
+    inset: calc(var(--border-width) * -1);
+    /* inset -> 포지션 값 축약 */
+    pointer-events: none;
+    /* pointer-events -> HTML 요소들의 마우스/터치 등의 응답 조정, none은 비활성화 */
+}
+
+.buttons .left, .buttons .right{
+    position: absolute;
+    width: var(--button-width);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5em;
+}
+
+.buttons .left{
+    right: 100%;
+    top: calc(var(--border-radius) * 2);
+}
+
+.buttons .left .buttons:nth-child(1){
+    /* nth-child -> 부모 안의 모든 요소 중 n번째 요소 */
+    height: 3em;
+    margin-bottom: 0.5em;
+}
+
+.buttons .right{
+    left: 100%;
+    transform: scale3d(-1, 1, 1);
+    top: calc(var(--border-radius) * 3);
+}
+
+.buttons .right .buttons{
+    height: 9.5em;
+}
+
+.buttons .button{
+    background: hsl(var(--c-h), 20%, 95%);
+    height: 6em;
+    box-shadow: inset -0.15em 0 0.1em black, inset 0 0 0.1em hsl(var(--c-h), 30%, 90%), inset 0 0 0.2em 0.1em hsl(var(--c-h), 30%, 90%), inset 0 -0.2em 0.1em hsl(var(--c-h), 30%, 90%), inset -0.1em -0.333em 0.1em rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 0.2em;
+    border-bottom-left-radius: 0.2em;
+}
+
+
+/* 스크린 */
+.screen-container{
+    position: absolute;
+    inset: 0;
+    border-radius: var(--border-radius);
+    border: var(--pad) solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(var(--pad) * 2)
+}
+
+.screen-container::before{
+    content: "";
+    position: absolute;
+    z-index: 2;
+    /* z-index -> z축 방향의 깊이 결정 */
+    background: white;
+    width: 36.6%;
+    bottom: calc(var(--pad) * 0.75);
+    height: calc(var(--pad) * 0.5);
+    border-radius: calc(var(--pad) * 0.25);
+    filter: drop-shadow(0 0.1em 0.25em rgba(0, 0, 0, 0.1));
+    /* filter -> 그래픽 효과, drop-shadow - 외부 그림자*/
+}
+
+
+/* 백그라운드 */
+.bg{
+    position: absolute;
+    inset: 0;
+    background: black;
+    border-radius: calc(var(--border-radius) - var(--pad));
+    overflow: hidden;
+    /* 요소 내의 컨텐츠가 커서 모두 보여주기 힘들 때 어떻게 보여줄지 지정 */
+}
+
+.bg>*{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 1s var(--ease-out) 0.5s;
+}
+
+.bg .section{
+    --g-h: var(--c-h);
+    --g-s: var(--c-s);
+    --g-l: var(--c-l);
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: cals(var(--border-radius) - var(--pad));
+    border-bottom-left-radius: 20em;
+    border-top-right-radius: 20em;
+}
+
+.bg .section:before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(85% 125% at 50% 140%, black 66.6%, transparent), radial-gradient(120% 120% at 50% 145%, hsl(calc(var(--g-h) - 45), 100%, 50%) 50% transparent), radial-gradient(150% 100% at 50% 80%, transparent 35%, hsl(calc(var(--g-h) * 50), 100%, 99%));
+    /* radial-gradient -> 원형 그라데이션 transparent -> 투명도 속성 */
+    background-color: hsl(var(--g-h), var(--g-s), var(--g-l));
+    transform: scale3d(1.1, 1.25, 1);
+    transform-origin: bottom;
+    transition: transform 1s var(--ease-out) 0.5s;
+}
+
+.bg .section:after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: var(--border-width) solid rgba(255, 25, 255, 0.8);
+    border-radius: inherit;
+    filter: blur(0.05em);
+    -webkit-mask-image: radial-gradient(100% 100% at 50% 70%, black 30% transparent 50%);
+    mask-image: radial-gradient(100% 100% at 50% 70%, black 30% transparent 50%);
+}
+
+.bg .section .glow{
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    mix-blend-mode: overlay;
+    /* mix-blend-mode -> 요소 겹치는 효과 */
+    z-index: 1;
+    background: radial-gradient(80% 150% at 50% 100%, hsl(var(--g-h), 100%, var(--g-l)), transparent 70%);
+}
+
+.bg .section:last-of-type{
+    /* last-of-type -> 같은 유형의 맨 마지막 형제 선택 */
+    --g-h: calc(var(--c-h) - var(--g-hue-adjust, 0));
+    --g-s: calc(var(--c-s) - 25%);
+    --g-l: calc(var(--c-l) + 20%);
+    transform: scale3d(1, -1, 1) translateZ(1px);
+}
+
+.bg .section:last-of-type::before{
+   background: radial-gradient(85% 125% at 50% 140%, black 66.6%, transparent), radial-gradient(120% 120% at 50% 145%, hsl(calc(var(--g-h) - var(--g-hue-adjust-2, var(--g-hue-adjust, 0))), 100%, 50%) 50%, transparent), radial-gradient(150% 100% at 50% 95%, transparent 15%, hsl(calc(var(--g-h) * 5), 100%, var(--g-lightness, 100%)));
+   background-color: hsl(var(--g-h), var(--g-s), var(--g-l));
+}
