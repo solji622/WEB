@@ -82,7 +82,7 @@ body {
     transform: scale3d(1.1, 1.1, 1);
     -webkit-animation: appear 1s var(--ease-out) forwards;
     animation: appear 1s var(--ease-out) forwards;
-    --webkit-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     /* backface-visibility -> 요소의 뒷쪽에서 앞면이 보이게 할지 정하는 속성 */
 }
 
@@ -250,4 +250,191 @@ body {
 .bg .section:last-of-type::before{
    background: radial-gradient(85% 125% at 50% 140%, black 66.6%, transparent), radial-gradient(120% 120% at 50% 145%, hsl(calc(var(--g-h) - var(--g-hue-adjust-2, var(--g-hue-adjust, 0))), 100%, 50%) 50%, transparent), radial-gradient(150% 100% at 50% 95%, transparent 15%, hsl(calc(var(--g-h) * 5), 100%, var(--g-lightness, 100%)));
    background-color: hsl(var(--g-h), var(--g-s), var(--g-l));
+}
+
+
+
+/* 노치 */
+.notch-container{
+    position: absolute;
+    z-index: 3;
+    top: var(--pad);
+    right: var(--pad);
+    left: var(--pad);
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    max-height: calc(var(--notch-radius) * 2);
+    pointer-events: none;
+    outline: none;
+    transition: var(--notch-duration) var(--ease);
+    /* transition -> 애니메이션 속도 조절 */
+    transition-property: max-height, max-width, filter, transform;
+    /* property -> css 속성을 지정 */
+    outline: none;
+    will-change: max-width, max-height, filter;
+    /* will-change -> 값이 변경될 속성에 대한 힌트를 미리 지정 */
+    /* 미리 지정하면 브라우저는 이미 알고 더 부드러운 이벤트 구사 */
+}
+
+.notch-container:hover, .notch-container:focus-within{
+    /* :focus-within -> 요소 포커스 시 요소 혹은 요소의 부모에서 선택자 사용 가능 */
+    --shadow-opacity: 0.5s;
+    transition-timing-function: var(--ease-spring);
+}
+
+.notch-container:hover .content, .notch-container:focus-within .content{
+    --content-padding: 2em;
+}
+
+.notch-container:hover .content .text, .notch-container:focus-within .content .text{
+    opacity: 1;
+}
+
+.notch-container:hover .notch, .notch-container:focus-within .notch{
+    max-width: 100%;
+    max-height: 100%;
+    pointer-events: all;
+    transform: scale3d(1, 1, 1);
+}
+
+.notch-container:hover~.notch-blur, .notch-container:focus-within~.notch-blur{
+    /* 선택자 "~" -> A태그 앞의 B태그만 선택 */
+    opacity: 1;
+    max-height: calc(var(--notch-radius) * 2.75 + var(--pad));
+}
+
+.notch-container:focus-within{
+    max-height: calc(var(--notch-radius) * 3);
+    --bar-height: 1em;
+    --bar-opacity: 1;
+}
+
+.notch-container:focus-within .left, .notch-container:focus-within .right{
+    max-height: calc(100% - var(--bar-height, 0%) - var(--content-gap));
+}
+
+.notch-container:focus-within~.notch-blur{
+    max-height: calc(var(--notch-radius) * 5);
+    opacity: 1;
+}
+
+.notch-blur{
+    position: absolute;
+    z-index: 2;
+    top: calc(var(--pad) - 3px);
+    right: calc(var(--pad) - 3px);
+    left: calc(var(--pad) - 3px);
+    height: 100%;
+    max-height: calc(var(--notch-radius) * 1.5);
+    -webkit-backdrop-filter: blur(0.2em);
+    /* backdrop-filter -> 배경에 블러 효과 */
+    backdrop-filter: blur(0.2em);
+    fill: blur(0.1em);
+    -webkit-mask-image: linear-gradient(to bottom, black calc(100% - var(--notch-radius)), transparent);
+    mask-image: linear-gradient(to bottom, black calc(100% - var(--notch-radius)), transparent);
+    /* mask-image -> 여러 속성으로 이미지에 효과 */
+    opacity: 0;
+    transition: var(--notch-duration) ease-in-out;
+    border-radius: calc(var(--border-radius) - var(--pad));
+    transition: var(--notch-duration) var(--ease);
+    transition-property: max-height, max-width, filter, transform;
+    will-change: max-width, max-height, filter;
+}
+
+.notch{
+    position: relative;
+    background: black;
+    border-radius: var(--notch-radius);
+    pointer-events: all;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+    transition: inherit;
+    transition-property: inherit;
+    will-change: inherit;
+    filter: drop-shadow(0.1em 2em hsla(0 0% 0%/var(--shadow-opacity, 0)));
+    transform: scale3d(0.375, 0.4, 1);
+    transform-origin: top;
+}
+
+.content{
+    --content-padding: 1.75em;
+    --duration-height: 0.5em;
+    --content-gap: 1em;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: var(--content-padding);
+    gap: var(--content-gap);
+    font-size: 125%;
+    transition-property: padding;
+    will-change: padding;
+}
+
+.content .left, .content .right{
+    height: 100%;
+    max-height: calc(100% - var(--bar-height, 0%));
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.content, .content .left, .content .right, .content .bar, .content .text{
+    transition: var(--notch-duration) --ease-out;
+}
+
+.content .left, .content .right, .content .bar{
+    transition-property: max-height, opacity;
+    will-change: max-height;
+}
+
+.content .left{
+    flex-grow: 2;
+}
+
+.content .text{
+    display: flex;
+    flex-direction: column;
+    gap: 0.333em;
+    transition-property: opacity;
+    opacity: var(--bar-opacity, 0);
+}
+
+.content .text:before{
+    content: "MusicArtistName";
+    order: 1;
+    text-transform: uppercase;
+}
+
+.content .text:after{
+    order: 2;
+    content: "MusicName";
+    opacity: 0.5;
+}
+
+.content .right{
+    flex-grow: 1;
+}
+
+.content .title{
+    background: #1a1ab3;
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 33.3%;
+    position: relative;
+}
+
+.content .title:before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(50% 50% at 55% 40%, #131386, #cd1385 75%, transparent) center/133.3% 133.3%;
+    background-color: yellow;
+    filter: blur(0.05em);
 }
