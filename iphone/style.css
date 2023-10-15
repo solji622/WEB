@@ -10,7 +10,7 @@
     --heght: 80em;
     --pad: 1.25em;
     --border-radius: 6.666em;
-    --gutter: calc(var(--pad)*2);
+    --gutter: calc(var(--pad) * 2);
     /* calc -> 사칙 연산자를 사용할 수 있는 계산 함수 */
     --button-width: 0.333em;
     --notch-height: 3.33em;
@@ -141,7 +141,7 @@ body {
 .buttons .button{
     background: hsl(var(--c-h), 20%, 95%);
     height: 6em;
-    box-shadow: inset -0.15em 0 0.1em black, inset 0 0 0.1em hsl(var(--c-h), 30%, 90%), inset 0 0 0.2em 0.1em hsl(var(--c-h), 30%, 90%), inset 0 -0.2em 0.1em hsl(var(--c-h), 30%, 90%), inset -0.1em -0.333em 0.1em rgba(0, 0, 0, 0.5);
+    box-shadow: inset -0.15em 0 0.1em black, inset 0 0 0.1em hsl(var(--c-h), 30%, 90%), inset 0 0.2em 0.1em hsl(var(--c-h), 30%, 90%), inset 0 -0.2em 0.1em hsl(var(--c-h), 30%, 90%), inset -0.1em 0.333em 0.1em rgba(0, 0, 0, 0.5), inset -0.1em -0.333em 0.1em rgba(0, 0, 0, 0.5);
     border-top-left-radius: 0.2em;
     border-bottom-left-radius: 0.2em;
 }
@@ -210,7 +210,7 @@ body {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background: radial-gradient(85% 125% at 50% 140%, black 66.6%, transparent), radial-gradient(120% 120% at 50% 145%, hsl(calc(var(--g-h) - 45), 100%, 50%) 50% transparent), radial-gradient(150% 100% at 50% 80%, transparent 35%, hsl(calc(var(--g-h) * 50), 100%, 99%));
+    background: radial-gradient(85% 125% at 50% 140%, black 66.6%, transparent), radial-gradient(120% 120% at 50% 145%, hsl(calc(var(--g-h) - 45), 100%, 50%) 50%, transparent), radial-gradient(150% 100% at 50% 80%, transparent 35%, hsl(calc(var(--g-h) + 50), 100%, 99%));
     /* radial-gradient -> 원형 그라데이션 transparent -> 투명도 속성 */
     background-color: hsl(var(--g-h), var(--g-s), var(--g-l));
     transform: scale3d(1.1, 1.25, 1);
@@ -222,10 +222,10 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    border: var(--border-width) solid rgba(255, 25, 255, 0.8);
+    border: var(--border-width) solid rgba(255, 255, 255, 0.8);
     border-radius: inherit;
     filter: blur(0.05em);
-    -webkit-mask-image: radial-gradient(100% 100% at 50% 70%, black 30% transparent 50%);
+    -webkit-mask-image: radial-gradient(100% 100% at 50% 70%, black 30%, transparent 50%);
     mask-image: radial-gradient(100% 100% at 50% 70%, black 30% transparent 50%);
 }
 
@@ -248,7 +248,7 @@ body {
 }
 
 .bg .section:last-of-type::before{
-   background: radial-gradient(85% 125% at 50% 140%, black 66.6%, transparent), radial-gradient(120% 120% at 50% 145%, hsl(calc(var(--g-h) - var(--g-hue-adjust-2, var(--g-hue-adjust, 0))), 100%, 50%) 50%, transparent), radial-gradient(150% 100% at 50% 95%, transparent 15%, hsl(calc(var(--g-h) * 5), 100%, var(--g-lightness, 100%)));
+    background: radial-gradient(85% 125% at 50% 140%, black 66.6%, transparent), radial-gradient(120% 120% at 50% 145%, hsl(calc(var(--g-h) - var(--g-hue-adjust-2, var(--g-hue-adjust, 0))), 100%, 50%) 50%, transparent), radial-gradient(150% 100% at 50% 95%, transparent 15%, hsl(calc(var(--g-h) + 5), 100%, var(--g-lightness, 100%)));
    background-color: hsl(var(--g-h), var(--g-s), var(--g-l));
 }
 
@@ -271,7 +271,6 @@ body {
     /* transition -> 애니메이션 속도 조절 */
     transition-property: max-height, max-width, filter, transform;
     /* property -> css 속성을 지정 */
-    outline: none;
     will-change: max-width, max-height, filter;
     /* will-change -> 값이 변경될 속성에 대한 힌트를 미리 지정 */
     /* 미리 지정하면 브라우저는 이미 알고 더 부드러운 이벤트 구사 */
@@ -438,3 +437,6 @@ body {
     background-color: yellow;
     filter: blur(0.05em);
 }
+
+
+
