@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+@font-face {
+  font-family: "intelone-mono-font-family-regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-style: normal;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #c8b6a6;
+  overflow: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.maintitle {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.maintitle p {
+  color: #553939;
+  line-height: 1em;
+}
+
+nav {
+  text-align: center;
+  background-color: #705A50;
+  height: 50px;
+}
+
+nav li {
+  font-family: 'Pretendard-Regular';
+  font-weight: 400;
+  width: 200px;
+  font-size: 20px;
+  display: inline-block;
+  float: none;
+  list-style: none;
+  margin-top: 10px;
+}
+
+li:hover {
+    background-color: #553939;
+    width: 200px;
+    height: 30px;
+    color: white;
+}
+
+.search-Box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.search-Box img{
+  position: absolute;
+  width: 30px;
+  top: 100px;
+  right: 12px;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.search-Box p{
+  font-family: 'Archivo Black', sans-serif;
+  color: #553939;
+  font-size: 55px;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 600px;
+  height: 70px;
+  border: 3px solid #553939;
+  border-radius: 20px;
+  font-size: 14px;
+  background: transparent;
+}
+
+footer {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: "intelone-mono-font-family-regular";
+}
