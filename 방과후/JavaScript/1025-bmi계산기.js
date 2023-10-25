@@ -1,5 +1,6 @@
 var weight = prompt("몸무게?")
-var height = prompt("키?")
+var height = prompt("키?") / 100 
+// 미터로 환산
 
 var bmi = weight / (height * height);
 
