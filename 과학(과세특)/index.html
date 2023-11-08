@@ -1,35 +1,26 @@
 <!DOCTYPE html>
-<html lang="ko">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>과학 과세특(다크모드 이용)</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        let darkmode_switch = true
-
-        $(".darkmode_btn").on("click", function () {
-        count = !count;
-        if (count === true) {
-            $(".white-box").removeClass("dark");
-            $(".contact_icon").removeClass("dark");
-            $(".darkmode_span").html("🌗 다크 모드로 보기");
-        } else {
-            $(".white-box").addClass("dark");
-            $(".contact_icon").addClass("dark");
-            $(".darkmode_span").html("☀️ 일반 모드로 보기");
-  }
-});
-
-    </script>
+    <script src=main.js></script>
+    <input id="btnDisplayMode" class="btn" type="button" value="🌗 다크모드로 보기" onclick="setDisplayAppreance(this);">
 </head>
-
 <body>
-    <div class="darkmode">
-        <button class="mode_btn" type="button">
-            <span class="mode_span">🌗 다크모드로 보기</span>
-        </button>
+    <div class="mainPage">
+        <h2>천적의 눈을 피하기 위해 적응하여<br>진화한 생물</h2>
+        <br>
+        <p>11216 성지현 슺 11218 이솔지 슻</p>
+        <div class="arrow">
+            <p>ˇ</p>
+            <p>ˇ</p>
+        </div>
+    </div>
+
+    <div class="page1">
+        <p>쳌 검은색나방과 흰색나방</p>
+        <img src="https://cloudfront-ap-northeast-1.images.arcpublishing.com/chosunbiz/7B3LBKT7E5MNIVGRJ7WOXBW2QA.jpg">
     </div>
 </body>
-
 </html>
