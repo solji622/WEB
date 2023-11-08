@@ -6,13 +6,28 @@
     <title>과학 과세특(다크모드 이용)</title>
     <link rel="stylesheet" href="style.css">
     <script>
+        let darkmode_switch = true
+
+        $(".darkmode_btn").on("click", function () {
+        count = !count;
+        if (count === true) {
+            $(".white-box").removeClass("dark");
+            $(".contact_icon").removeClass("dark");
+            $(".darkmode_span").html("🌗 다크 모드로 보기");
+        } else {
+            $(".white-box").addClass("dark");
+            $(".contact_icon").addClass("dark");
+            $(".darkmode_span").html("☀️ 일반 모드로 보기");
+  }
+});
+
     </script>
 </head>
 
 <body>
-    <div class="darkMode">
-        <button class="Mode_btn" type="button">
-            <span class="Mode_span"></span>
+    <div class="darkmode">
+        <button class="mode_btn" type="button">
+            <span class="mode_span">🌗 다크모드로 보기</span>
         </button>
     </div>
 </body>
