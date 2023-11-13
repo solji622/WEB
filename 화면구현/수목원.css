@@ -1,52 +1,81 @@
-body {
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#main {
     width: 1000px;
-    font-size: 14pt;
+}
+
+#header {
+    width: 1000px;
 }
 
 .menu {
-    background-color: darkseagreen;
     text-align: center;
 }
 
-.menu a {
-    text-decoration: none;
-    color: black;
+.menu ul {
+    margin: auto;
+    display: inline-block;
 }
 
 .menu li {
-    display: inline-block;
+    float: left;
     list-style: none;
     margin: 15px;
 }
 
+.menu a {
+    padding: 15px 25px;
+    text-decoration: none;
+    color: green;
+}
+
 .menu a:hover {
-    background-color: green;
-    color: white;
+    background-color: #DBBABA;
+    color: black;
 }
 
 .info_title {
-    font-size: 15pt;
-    font-weight: bold;
-    background-color: #AEAAAA;
     width: 900px;
     height: 50px;
-    /* margin-left: auto;
-    margin-right: auto; */
+    margin: 0 25px;
+    background-color: #AEAAAA;
+    line-height: 50px;
+    font-size: 15pt;
+    font-weight: bold;
 }
 
 .info_title_detail {
-    font-size: 15pt;
-    font-weight: bold;
-    background-color: #E4E3E3;
     width: 800px;
     height: 50px;
+    margin: 0 25px;
+    background-color: #E4E3E3;
+    line-height: 50px;
+    font-size: 15pt;
+    font-weight: bold;
 }
 
-th,
-td {
-    border: 1px solid;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
+.info_contents {
+    padding: 30px;
+    font-size: 14pt;
+}
+
+.info_table {
+    /* border: 1px solid black; */
+    border-collapse: collapse;
+    /* 표의 테두리와 셀의 테두리 사이의 간격을 없애고 겹치는 부분은 한 줄로 나타냄 */
+}
+
+.info_table tr td {
+    border: 1px solid black;
+    padding: 10px 30px;
+}
+
+.info_table tr th {
+    border: 1px solid black;
+    padding: 10px 30px;
 }
