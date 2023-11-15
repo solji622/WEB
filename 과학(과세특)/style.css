@@ -13,7 +13,7 @@
 body {
     font-family: 'YdestreetB';
     text-align: center;
-    height: 3000px;
+    height: 5000px;
 }
 
 .btn {
@@ -64,6 +64,38 @@ body {
 
 .page2 {
     margin-top: 500px;
+    font-size: 60px;
+}
+.page2 p{
     margin-left: 50px;
+}
+.page2 li{
+    padding: 0 300px;
+    display: inline-block;
+}
+.page2 li:hover{
+    background-color: black;
+    color: white;
+}
+/* 추후에 너비 수정 */
+
+.box{
+    width: 100%;
+    height: 500px;
+    margin:0; 
+    border: 1px solid black;
+}
+.black{
+    width: 50%;
+    height: 500px;
+    background-color: black;
+}
+.black span{
+    background-color: white;
+    color:black;
+}
+
+.page3{
+    margin-top: 500px;
     font-size: 60px;
 }
