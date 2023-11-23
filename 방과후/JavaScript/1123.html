@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            margin-top: 200px;
+            background-color: #b0cbb7;
+            text-align: center;
+            font-family: '함초롬바탕';
+        }
+
+        button {
+            padding: 8px 32px;
+            font-size: 16px;
+            font-family: '함초롬바탕';
+            color: black;
+            font-weight: bold;
+            border: 2px solid black;
+            background-color: transparent;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        #btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin: 20px;
+        }
+    </style>
+
+    <script>
+        function dark() {
+            let btn = document.getElementsByTagName('button');
+            if (btn[0].innerHTML == '다크모드🌗') {
+                document.body.style.backgroundColor = '#102517';
+                document.body.style.color = 'white';
+
+                for (let i = 0; i < btn.length; i++) {
+                    btn[i].style.color = 'white';
+                    btn[i].style.border = 'white 2px solid';
+                }
+                btn[0].innerHTML = '화이트모드🌕';
+            } else { // 화이트모드로 전환할 때
+                document.body.style.backgroundColor = '#b0cbb7';
+                document.body.style.color = 'black';
+
+                for (let i = 0; i < btn.length; i++) {
+                    btn[i].style.color = 'black';
+                    btn[i].style.border = 'black 2px solid';
+                }
+                btn[0].innerHTML = '다크모드🌗';
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn" onclick="dark()">다크모드🌗</button>
+    <img src="https://image.istarbucks.co.kr/common/img/main/rewards-logo.png" alt="스타벅스 로고">
+    <h1>스타벅스만의 특별한 혜택, 스타벅스 리워드</h1>
+    <p>
+        스타벅스 회원이세요?
+        로그인을 통해 나만의 리워드를 확인해보세요.
+        스타벅스 회원이 아니세요?
+        가입을 통해 리워드 혜택을 즐기세요.
+    </p>
+    <button>회원가입</button>
+    <button>로그인</button>
+</body>
+
+</html>
